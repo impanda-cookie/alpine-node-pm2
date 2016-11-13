@@ -1,7 +1,8 @@
-FROM alpine:latest
+#FROM alpine:latest
+FROM alpine:edge
 MAINTAINER cowpanda<ynw506@gmail.com>
 
-ENV NODE_VERSION=v6.2.2
+ENV NODE_VERSION=v7.1.0
 
 
 RUN apk upgrade --update \
@@ -22,7 +23,7 @@ RUN apk upgrade --update \
     /usr/lib/node_modules/npm/doc /usr/lib/node_modules/npm/html \
  && apk search --update
 
-RUN npm install -g pm2@latest
+RUN npm install -g pm2@latest cnpm --registry=https://registry.npm.taobao.org
 
 COPY pm2_init /pm2_init
 RUN chmod 755 /pm2_init
