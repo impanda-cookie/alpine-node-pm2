@@ -1,5 +1,7 @@
 # alpine-node-pm2  for docker 
 
+> **note**:if you want use taobao cnpm instead of npm please switch v6.x-with-cnpm branch;
+
 ### Install
   
     docker pull cowpanda/alpine-node-pm2:latest
