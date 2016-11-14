@@ -2,7 +2,7 @@
 FROM alpine:edge
 MAINTAINER cowpanda<ynw506@gmail.com>
 
-ENV NODE_VERSION=v7.1.0
+ENV NODE_VERSION=v6.9.1
 
 
 RUN apk upgrade --update \
