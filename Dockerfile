@@ -17,7 +17,7 @@ RUN apk upgrade --update \
  && make install \
  && paxctl -cm /usr/bin/node \
  && npm cache clean \
- && apk del make gcc g++ python linux-headers \
+# && apk del make gcc g++ python linux-headers \
  && rm -rf /root/src /tmp/* /usr/share/man /var/cache/apk/* \
     /root/.npm /root/.node-gyp /usr/lib/node_modules/npm/man \
     /usr/lib/node_modules/npm/doc /usr/lib/node_modules/npm/html \
