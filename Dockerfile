@@ -6,7 +6,7 @@ ENV NODE_VERSION=v6.9.1
 
 RUN apk upgrade --update \
  && apk add curl make gcc g++ linux-headers paxctl musl-dev \
-  libc6-compat libgcc libstdc++ binutils-gold python openssl-dev zlib-dev \
+  libc6-compat libgcc libstdc++ binutils-gold python python-dev openssl-dev zlib-dev \
  && mkdir -p /root/src \
  && cd /root/src \
  && curl -sSL https://nodejs.org/dist/${NODE_VERSION}/node-${NODE_VERSION}.tar.gz | tar -xz \
@@ -16,7 +16,7 @@ RUN apk upgrade --update \
  && make install \
  && paxctl -cm /usr/bin/node \
  && npm cache clean \
- && apk del make gcc g++ python linux-headers \
+#&& apk del make gcc g++ python linux-headers \
  && rm -rf /root/src /tmp/* /usr/share/man /var/cache/apk/* \
     /root/.npm /root/.node-gyp /usr/lib/node_modules/npm/man \
     /usr/lib/node_modules/npm/doc /usr/lib/node_modules/npm/html \
