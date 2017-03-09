@@ -7,7 +7,7 @@ ENV NODE_VERSION=v6.9.1
 
 RUN apk upgrade --update \
  && apk add curl make gcc g++ linux-headers paxctl musl-dev \
-    libc6-compat libgcc libstdc++ binutils-gold python  python-dev openssl-dev zlib-dev \
+    libc6-compat libgcc libstdc++ binutils-gold python python-dev openssl-dev zlib-dev \
  && mkdir -p /root/src \
  && cd /root/src \
  && curl -sSL https://nodejs.org/dist/${NODE_VERSION}/node-${NODE_VERSION}.tar.gz | tar -xz \
@@ -23,7 +23,7 @@ RUN apk upgrade --update \
     /usr/lib/node_modules/npm/doc /usr/lib/node_modules/npm/html \
  && apk search --update
 
-RUN npm install -g pm2@latest cnpm --registry=https://registry.npm.taobao.org
+#RUN npm install -g pm2@latest cnpm --registry=https://registry.npm.taobao.org
 
 COPY pm2_init /pm2_init
 RUN chmod 755 /pm2_init
