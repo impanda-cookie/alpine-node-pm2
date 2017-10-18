@@ -1,4 +1,4 @@
-FROM  node:alpine
+FROM  node:8-alpine
 MAINTAINER cowpanda<ynw506@gmail.com>
 RUN npm install -g pm2@latest
 
